@@ -1,0 +1,12 @@
+{
+  "clientes": [
+    {
+      "nombre": "guillermo!",
+      "empresa": "nueva",
+      "email": "ignacio.marquez159@gmail.com",
+      "notas": "asdasdsad ",
+      "telefono": "",
+      "id": 2
+    }
+  ]
+}
