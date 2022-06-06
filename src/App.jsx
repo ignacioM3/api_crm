@@ -12,7 +12,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}/>
-          
         <Route path="/clientes" element={<Layout/>}>
             <Route index element={<Inicio />} />
             <Route path="nuevo" element={<NuevoClientes/>} />

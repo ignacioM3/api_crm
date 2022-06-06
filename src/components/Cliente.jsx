@@ -2,9 +2,8 @@ import { useNavigate } from "react-router-dom"
 
 
 const Cliente = ({ cliente, handleEliminar }) => {
+  //useNavigate para naver con los onClick de: EDITAR, VER, ELIMINAR
   const navigate = useNavigate()
-
-
 
   const { nombre, empresa, email, telefono, notas, id } = cliente
   return (

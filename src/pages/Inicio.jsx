@@ -7,8 +7,10 @@ const Inicio = () => {
   useEffect(() => {
     const obtenerClienteApi = async () => {
       try {
+        //consulta a la API, cuando es petición del tipo GET no es necesario enviar un objeto por el fetch
         const url = import.meta.env.VITE_API_URL
         const resupuesta = await fetch(url)
+        //usamos el resultado para setClientes
         const resultado = await resupuesta.json()
         setClientes(resultado)
 
@@ -21,15 +23,19 @@ const Inicio = () => {
   }, [])
 
   const handleEliminar = async (id) =>{
+    //confirmación del cliente a eliminar
     const confirmar = confirm('¿Desea eliminar este cliente?')
     if(confirmar){
       try {
+        //cuando es delete, solo debemos pasar el method: "DELETE"
         const url = `${import.meta.env.VITE_API_URL}/${id}`
         const respuesta = await fetch(url, {
           method: 'DELETE'
         })
+        //cuando no necesitamos el resultado solo damos await respuesta.json()
         await respuesta.json()
 
+        //actualizamos el db.json pero no el estado. Por lo tanto hacemos un filter y usamos el setClientes
         const arrayClientes = clientes.filter(cliente => cliente.id !== id)
         setClientes(arrayClientes)
       } catch (error) {

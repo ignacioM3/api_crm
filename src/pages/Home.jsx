@@ -1,6 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div className='bg-blue-700 min-h-screen pt-20 '>
 
@@ -10,6 +14,7 @@ const Home = () => {
             <button 
             type='button' 
             className='py-3 px-8 sm:px-10 my-8 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg'
+            onClick={() => navigate("/clientes") }
             >
                 Inicio
             </button>

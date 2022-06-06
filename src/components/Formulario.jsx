@@ -9,6 +9,8 @@ const Formulario = ({ cliente, load }) => {
 
   const navigate = useNavigate()
 
+  // Yup es validaciones que vienen bien con Formik, necesitamos crear el schema
+
   const nuevoClienteSchema = Yup.object().shape({
     nombre: Yup.string()
       .min(3, "El nombre es muy corto")
@@ -86,9 +88,7 @@ const Formulario = ({ cliente, load }) => {
             ({ errors, touched }) => {
 
               return (
-                <Form
-                  className='mt-10'
-                >
+                <Form className='mt-10' >
                   <div className='mb-4'>
                     <label
                       className='text-gray-800'
@@ -208,7 +208,7 @@ const Formulario = ({ cliente, load }) => {
     )
   )
 }
-
+//ponemos por defecto los siguientes props para poder retulizar el codigo en editar y nuevo cliente
 Formulario.defaultProps = {
   cliente: {},
   load: false
